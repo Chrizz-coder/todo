@@ -1,0 +1,59 @@
+/*
+ * index.css — Global styles + Tailwind CSS v4 entry point
+ *
+ * In Tailwind v4, you just import the package here — no tailwind.config.js needed!
+ * All Tailwind utilities become available automatically via the Vite plugin.
+ *
+ * We also add a few global overrides here that aren't in Tailwind's utilities.
+ */
+
+@import "tailwindcss";
+
+/* ─── GOOGLE FONT (Inter) ──────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── BASE RESETS ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent; /* Removes blue tap flash on mobile */
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR STYLING (Chrome/Edge/Safari) ───────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+
+/* ─── FOCUS VISIBLE (accessibility) ───────────────────────────────────────── */
+/* Makes keyboard navigation visible without showing outline on mouse click */
+:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.7);
+  outline-offset: 2px;
+}
+
+/* ─── SMOOTH CHECKBOX TRANSITION ───────────────────────────────────────────── */
+/* The line-through animation on completed items */
+.line-through {
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(139, 92, 246, 0.5);
+}

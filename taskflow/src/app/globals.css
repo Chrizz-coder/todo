@@ -1,0 +1,48 @@
+/*
+ * globals.css — Tailwind v4 + global design tokens
+ *
+ * Tailwind v4 uses @import "tailwindcss" (no tailwind.config.js needed).
+ * Geist font variables are set by next/font in layout.tsx and used via
+ * the CSS variable --font-geist-sans.
+ */
+
+@import "tailwindcss";
+
+/* ─── SCROLLBAR (Webkit) ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.6); }
+
+/* ─── FOCUS VISIBLE (a11y keyboard nav) ─────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.7);
+  outline-offset: 2px;
+}
+
+/* ─── PREVENT HORIZONTAL OVERFLOW FROM ANIMATIONS ───────────────────────── */
+body { overflow-x: hidden; }
+
+/* ─── SELECTION COLOR ────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(99, 102, 241, 0.4);
+  color: #fff;
+}
+
+/* ─── SMOOTH LINE-THROUGH FOR COMPLETED ITEMS ───────────────────────────── */
+.line-through {
+  text-decoration-color: rgba(99, 102, 241, 0.4);
+  text-decoration-thickness: 1.5px;
+}
+
+/* ─── INPUT AUTOFILL COLOR FIX (dark mode) ───────────────────────────────── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #0d0d14 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
